@@ -8,7 +8,7 @@ class Employee {
         return this.name
        
     }
-    getId()  {
+    getId() {
         return this.id
     }
     getEmail() {
