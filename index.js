@@ -78,7 +78,7 @@ function addEngineer() {
         },
         {
             type: "input",
-            name: "manager email",
+            name: "engineer email",
             message: "Enter Employee Email",    
         },
         {
@@ -93,22 +93,22 @@ function addEngineer() {
         },
     ])
     .then(function(response){
-        const newManager = new Manager(response.manager_name,response.id,response.manager_email,response.office_number)
-        managerHtml += managerTemplate(newManager)
-        console.log(managerHtml)
+        const newEngineer = new Engineer(response.engineer_name,response.id,response.engineer_email,response.github_username)
+        engineerHtml += engineerTemplate(newEngineer)
+        console.log(engineerHtml)
     })
 }
 
-function addManager() {
+function addIntern() {
     inquirer.prompt([
         {
             type: "input",
-            name: "manager name",
+            name: "intern name",
             message: "Enter Employee Name",    
         },
         {
             type: "input",
-            name: "manager email",
+            name: "intern email",
             message: "Enter Employee Email",    
         },
         {
@@ -123,9 +123,9 @@ function addManager() {
         },
     ])
     .then(function(response){
-        const newManager = new Manager(response.manager_name,response.id,response.manager_email,response.office_number)
-        managerHtml += managerTemplate(newManager)
-        console.log(managerHtml)
+        const newIntern = new Intern(response.intern_name,response.id,response.intern_email,response.school)
+        internHtml += internTemplate(newIntern)
+        console.log(interHtml)
     })
 }
 
