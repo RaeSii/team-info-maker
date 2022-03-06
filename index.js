@@ -1,3 +1,4 @@
+const fs = require('fs')
 const inquirer = require('inquirer')
 
 const Engineer = require('./lib/Engineer')
@@ -8,6 +9,8 @@ const Manager = require('./lib/Manager')
 
 const managerTemplate = require('./templates/managerTemplate')
 
+
+const htmlTemplate = require('./templates/index')
 let managerHtml = ''
 
 function init() {
@@ -64,4 +67,79 @@ function addManager() {
         managerHtml += managerTemplate(newManager)
         console.log(managerHtml)
     })
+}
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "engineer name",
+            message: "Enter Employee Name",    
+        },
+        {
+            type: "input",
+            name: "manager email",
+            message: "Enter Employee Email",    
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "Enter Employee ID",    
+        },
+        {
+            type: "input",
+            name: "github username",
+            message: "Enter GitHub User Name",    
+        },
+    ])
+    .then(function(response){
+        const newManager = new Manager(response.manager_name,response.id,response.manager_email,response.office_number)
+        managerHtml += managerTemplate(newManager)
+        console.log(managerHtml)
+    })
+}
+
+function addManager() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "manager name",
+            message: "Enter Employee Name",    
+        },
+        {
+            type: "input",
+            name: "manager email",
+            message: "Enter Employee Email",    
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "Enter Employee ID",    
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "Enter Employee School",    
+        },
+    ])
+    .then(function(response){
+        const newManager = new Manager(response.manager_name,response.id,response.manager_email,response.office_number)
+        managerHtml += managerTemplate(newManager)
+        console.log(managerHtml)
+    })
+}
+
+async function exitApplication() {
+    const htmlData = await htmlTemplate(
+        {
+            manager: managerHtml,
+            intern: interHtml,
+            engineer: engineerHtml
+            
+        }
+    )
+   fs.writeFileSync('index.html',htmlData,function(err){
+       if(err)throw err
+   }) 
+
 }
