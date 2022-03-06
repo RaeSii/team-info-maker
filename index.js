@@ -62,5 +62,6 @@ function addManager() {
     .then(function(response){
         const newManager = new Manager(response.manager_name,response.id,response.manager_email,response.office_number)
         managerHtml += managerTemplate(newManager)
+        console.log(managerHtml)
     })
 }

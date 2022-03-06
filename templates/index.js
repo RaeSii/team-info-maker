@@ -1,4 +1,4 @@
-const html = () => {
+const html = (data) => {
     return (`
     <!doctype html>
 <html lang="en">
@@ -13,7 +13,21 @@ const html = () => {
     <title>Hello, world!</title>
   </head>
   <body>
+  <header class="bg-primary text-center text-white">
     <h1>Hello, world!</h1>
+    </header>
+    <div class="row">
+    <h2>Manager</h2>
+    ${data.manager}
+    </div>
+    <div class="row">
+    <h2>Engineer</h2>
+    ${data.engineer}
+    </div>
+    <div class="row">
+    <h2>Intern</h2>
+    ${data.intern}
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
