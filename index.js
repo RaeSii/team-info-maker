@@ -9,6 +9,9 @@ const Manager = require('./lib/Manager')
 
 const managerTemplate = require('./templates/managerTemplate')
 
+const engineerTemplate = require('./templates/engineerTemplate')
+
+const internTemplate = require('./templates/internTemplate')
 
 const htmlTemplate = require('./templates/index')
 let managerHtml = ''
@@ -36,7 +39,7 @@ function init() {
                     exitApplication();
             }
         })
-}
+};
 
 
 function addManager() {
@@ -67,7 +70,7 @@ function addManager() {
         managerHtml += managerTemplate(newManager)
         console.log(managerHtml)
     })
-}
+};
 
 function addEngineer() {
     inquirer.prompt([
@@ -97,7 +100,7 @@ function addEngineer() {
         engineerHtml += engineerTemplate(newEngineer)
         console.log(engineerHtml)
     })
-}
+};
 
 function addIntern() {
     inquirer.prompt([
@@ -127,7 +130,7 @@ function addIntern() {
         internHtml += internTemplate(newIntern)
         console.log(interHtml)
     })
-}
+};
 
 async function exitApplication() {
     const htmlData = await htmlTemplate(
