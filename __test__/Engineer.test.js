@@ -27,9 +27,9 @@ test("Engineer class getEmail()", function(){
 })
 test("Engineer class getRole()", function(){
     const myEngineer = new Engineer("Rachel Schaaf",179,"rsaafi@gmail.com", "rsaafi")
-    expect(myEngineer.getRole()).toBe("Engineer")
+    expect(myEngineer.getRole()).toBe("engineer")
 })
 test("Engineer class getGithub()", function(){
     const myEngineer = new Engineer("Rachel Schaaf",179,"rsaafi@gmail.com", "rsaafi")
-    expect(myEngineer.getGithub()).toBe("")
+    expect(myEngineer.getGithub()).toBe("rsaafi")
 })

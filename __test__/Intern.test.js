@@ -27,9 +27,9 @@ test("Intern class getEmail()", function(){
 })
 test("Intern class getRole()", function(){
     const myIntern = new Intern("Rachel Schaaf",179,"rsaafi@gmail.com", "University California Los Angeles")
-    expect(myIntern.getRole()).toBe("Intern")
+    expect(myIntern.getRole()).toBe("intern")
 })
-test("Intern class getGithub()", function(){
+test("Intern class getschool()", function(){
     const myIntern = new Intern("Rachel Schaaf",179,"rsaafi@gmail.com", "University California Los Angeles")
-    expect(myIntern.getGithub()).toBe("")
+    expect(myIntern.getSchool()).toBe("University California Los Angeles")
 })
