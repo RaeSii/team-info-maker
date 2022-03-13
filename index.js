@@ -15,13 +15,15 @@ const internTemplate = require('./templates/internTemplate')
 
 const htmlTemplate = require('./templates/index')
 let managerHtml = ''
+let engineerHtml = ''
+let internHtml = ''
 
 function init() {
     inquirer.prompt([{
         type: "list",
-        name: "user-choice",
+        name: "user_choice",
         message: "What would like to do?",
-        choices: ["add manager, add engineer, add intern", "Exit Application"]
+        choices: ["add manager", "add engineer", "add intern", "Exit Application"]
 
     }])
         .then(function (response) {
@@ -46,12 +48,12 @@ function addManager() {
     inquirer.prompt([
         {
             type: "input",
-            name: "manager name",
+            name: "managername",
             message: "Enter Employee Name",    
         },
         {
             type: "input",
-            name: "manager email",
+            name: "manageremail",
             message: "Enter Employee Email",    
         },
         {
@@ -61,14 +63,15 @@ function addManager() {
         },
         {
             type: "input",
-            name: "office number",
+            name: "officenumber",
             message: "Enter Employee Office Number",    
         },
     ])
     .then(function(response){
-        const newManager = new Manager(response.manager_name,response.id,response.manager_email,response.office_number)
+        const newManager = new Manager(response.managername,response.id,response.manageremail,response.officenumber)
         managerHtml += managerTemplate(newManager)
         console.log(managerHtml)
+        init()
     })
 };
 
@@ -76,12 +79,12 @@ function addEngineer() {
     inquirer.prompt([
         {
             type: "input",
-            name: "engineer name",
+            name: "engineername",
             message: "Enter Employee Name",    
         },
         {
             type: "input",
-            name: "engineer email",
+            name: "engineeremail",
             message: "Enter Employee Email",    
         },
         {
@@ -91,14 +94,15 @@ function addEngineer() {
         },
         {
             type: "input",
-            name: "github username",
+            name: "githubusername",
             message: "Enter GitHub User Name",    
         },
     ])
     .then(function(response){
-        const newEngineer = new Engineer(response.engineer_name,response.id,response.engineer_email,response.github_username)
+        const newEngineer = new Engineer(response.engineername,response.id,response.engineeremail,response.githubusername)
         engineerHtml += engineerTemplate(newEngineer)
         console.log(engineerHtml)
+        init()
     })
 };
 
@@ -106,12 +110,12 @@ function addIntern() {
     inquirer.prompt([
         {
             type: "input",
-            name: "intern name",
+            name: "internname",
             message: "Enter Employee Name",    
         },
         {
             type: "input",
-            name: "intern email",
+            name: "internemail",
             message: "Enter Employee Email",    
         },
         {
@@ -126,9 +130,10 @@ function addIntern() {
         },
     ])
     .then(function(response){
-        const newIntern = new Intern(response.intern_name,response.id,response.intern_email,response.school)
+        const newIntern = new Intern(response.internname,response.id,response.internemail,response.school)
         internHtml += internTemplate(newIntern)
-        console.log(interHtml)
+        console.log(internHtml)
+        init()
     })
 };
 
@@ -136,13 +141,16 @@ async function exitApplication() {
     const htmlData = await htmlTemplate(
         {
             manager: managerHtml,
-            intern: interHtml,
+            intern: internHtml,
             engineer: engineerHtml
             
         }
     )
+    console.log(htmlData)
    fs.writeFileSync('index.html',htmlData,function(err){
        if(err)throw err
    }) 
 
 }
+
+init()
