@@ -1,15 +1,16 @@
 const internTemplate = (data) =>{
     return( `
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">${data.name}</h5>
-          <p class="card-text">ID: ${data.id}</p>
-          <p class="card-text">School Name: ${data.school}</p>
-          <a href="mailto:${data.email}" class="btn btn-primary">Email: ${data.email}</a>
-        </div>
-      </div>
-    </div>`)
+    <div class="card m-3" style="width: 18rem;">
+    <div class="card-header bg-primary text-center text-white">
+      ${data.name}<br>
+      Intern
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">ID:${data.id}</li>
+      <li class="list-group-item">School: ${data.school}</li>
+      <a href="mailto:${data.email}" class="btn btn-primary">Email: ${data.email}</a>
+    </ul>
+  </div>`)
 }
 
 module.exports = internTemplate
