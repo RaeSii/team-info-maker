@@ -1,5 +1,5 @@
 const html = (data) => {
-    return (`
+  return (`
     <!doctype html>
 <html lang="en">
   <head>
@@ -16,27 +16,20 @@ const html = (data) => {
   <header class="bg-secondary text-center text-white">
     <h1>My Team Roster</h1>
     </header>
-    // <div class="row border border-secondary">
-    // <h2>Manager</h2>
-    // ${data.manager}
-    // </div>
-    // <div class="row border border-dark">
-    // <h2>Engineer</h2>
-    // ${data.engineer}
-    // </div>
-    // <div class="row border border-primary">
-    // <h2>Intern</h2>
-    // ${data.intern}
-    // </div>
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-  <div class="card-header">Manager</div>
-  <div class="card-body">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-
-
+    <div class="row m-3 p-3 d-flex justify-content-center">
+    <div class="row border border-secondary">
+    <h2>Manager</h2>
+    ${data.manager}
+    </div>
+    <div class="row border border-dark">
+    <h2>Engineer</h2>
+    ${data.engineer}
+    </div>
+    <div class="row border border-primary">
+    <h2>Intern</h2>
+    ${data.intern}
+    </div>
+    </div>
   </body>
 </html>`)
 }
