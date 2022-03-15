@@ -13,22 +13,20 @@ const html = (data) => {
     <title>My Team</title>
   </head>
   <body>
-  <header class="bg-secondary text-center text-white">
+  <header class="bg-danger text-center text-white">
     <h1>My Team Roster</h1>
     </header>
-    <div class="row m-3 p-3 d-flex justify-content-center">
-    <div class="row border border-secondary">
-    <h2>Manager</h2>
+    <div class="row m-3 p-3 d-flex justify-content-center border rounded border-danger">
+    <h2 class="text-danger">Manager</h2>
     ${data.manager}
     </div>
-    <div class="row border border-dark">
-    <h2>Engineer</h2>
+    <div class="row m-3 p-3 d-flex justify-content-center border rounded border-danger">
+    <h2 class="text-danger">Engineer</h2>
     ${data.engineer}
     </div>
-    <div class="row border border-primary">
-    <h2>Intern</h2>
+    <div class="row m-3 p-3 d-flex justify-content-center border rounded border-danger">
+    <h2 class="text-danger">Intern</h2>
     ${data.intern}
-    </div>
     </div>
   </body>
 </html>`)
