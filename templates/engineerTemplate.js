@@ -7,7 +7,7 @@ const engineerTemplate = (data) =>{
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID:${data.id}</li>
-          <li class="list-group-item">GitHub User Name: ${data.gitHub}</li>
+          <li class="list-group-item">GitHub User Name: ${data.github}</li>
           <a href="mailto:${data.email}" class="btn btn-secondary">Email: ${data.email}</a>
         </ul>
       </div>`)
