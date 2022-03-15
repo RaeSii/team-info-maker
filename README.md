@@ -51,5 +51,5 @@ JavaScript, Bootstrap, JQuery, NodeJS
 Rachel Schaaf
 
 ### ScreenShot
-![Sample HTML](https://github.com/RaeSii/readme-maker/blob/main/Develop/assets/images/img1.png)
+![Sample HTML](https://github.com/RaeSii/team-info-maker/blob/main/assets/img2.png)
 ![README](https://github.com/RaeSii/team-info-maker/blob/main/assets/README.png)
